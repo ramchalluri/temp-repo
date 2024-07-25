@@ -1,0 +1,223 @@
+<mxfile host="65bd71144e">
+    <diagram id="ZXhNhfHxyPPff1uzyvW1" name="01-mygov-auditlog-high-level-diagram">
+        <mxGraphModel dx="2967" dy="1655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="61" value="" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="20" width="970" height="640" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;" parent="1" source="16" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.667;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="3" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Account Microservice&lt;br&gt;(Audit API)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1b0ce9;dashed=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="197" y="40" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="4" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Audit API Common Component" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="98" y="129" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;" parent="1" source="5" target="39" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=1;" parent="1" source="5" target="40" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="Audit Write" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="51" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2688" relative="1" as="geometry">
+                        <mxPoint x="21" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="myGov Audit Log" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="228" y="425" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;strokeWidth=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="258" y="420" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="250" y="390"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="Authentication" style="rounded=1;whiteSpace=wrap;html=1;flipH=0;flipV=1;" parent="1" vertex="1">
+                    <mxGeometry x="149" y="300" width="100" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=1;" parent="1" source="7" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="280" y="390"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="Tell Us Once" style="rounded=1;whiteSpace=wrap;html=1;flipH=0;flipV=1;" parent="1" vertex="1">
+                    <mxGeometry x="259" y="300" width="100" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;strokeWidth=1;" parent="1" source="8" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Audit Kafka" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="98" y="208" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;strokeWidth=1;" parent="1" source="9" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="180" y="390"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="Audit Consumer" style="rounded=1;whiteSpace=wrap;html=1;flipH=0;flipV=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="300" width="100" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="16" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Microservices" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="45" y="40" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fillColor=#a20025;strokeColor=#1b0ce9;dashed=1;" parent="1" source="20" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="546" y="390"/>
+                            <mxPoint x="258" y="390"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="Staff Audit API Common &lt;br&gt;Component" style="rounded=1;whiteSpace=wrap;html=1;flipH=0;flipV=1;strokeColor=#1b0ce9;dashed=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="486" y="298" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=elbowEdgeStyle;html=1;" parent="1" source="22" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=elbowEdgeStyle;html=1;strokeWidth=1;" parent="1" source="22" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=elbowEdgeStyle;html=1;strokeWidth=2;fillColor=#a20025;strokeColor=#6F0000;dashed=1;" parent="1" source="22" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="MST Microservices" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="521" y="129" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Staff &lt;br&gt;Audit Log" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="591" y="423" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=elbowEdgeStyle;html=1;strokeWidth=1;" parent="1" source="28" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeWidth=2;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="28" target="64" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=default;strokeWidth=1;fontSize=11;endArrow=classic;endFill=0;" parent="1" source="28" target="42" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="670" y="63"/>
+                            <mxPoint x="670" y="380"/>
+                            <mxPoint x="832" y="380"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="ISAM" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="345" y="40" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="SEIM" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="189" y="555" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="EDW" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="555" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="CYBER" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="802" y="555" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;" parent="1" source="42" target="41" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="Elastic" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="803" y="425" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;" parent="1" source="43" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="832" y="425" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="722" y="380"/>
+                            <mxPoint x="832" y="380"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="Openshift Application Logs" style="rounded=1;whiteSpace=wrap;html=1;flipH=0;flipV=1;" parent="1" vertex="1">
+                    <mxGeometry x="678" y="298" width="100" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;" parent="1" source="45" target="42" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="942" y="380"/>
+                            <mxPoint x="832" y="380"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="Datapower" style="rounded=1;whiteSpace=wrap;html=1;flipH=0;flipV=1;" parent="1" vertex="1">
+                    <mxGeometry x="892" y="298" width="100" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="" style="endArrow=none;html=1;strokeWidth=1;dashed=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="471" y="640" as="sourcePoint"/>
+                        <mxPoint x="471" y="30" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="" style="endArrow=none;html=1;strokeWidth=1;dashed=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="661" y="645" as="sourcePoint"/>
+                        <mxPoint x="661" y="35" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=1;" parent="1" source="44" target="42" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="AEM Logs" style="rounded=1;whiteSpace=wrap;html=1;flipH=0;flipV=1;" parent="1" vertex="1">
+                    <mxGeometry x="786" y="298" width="100" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeWidth=2;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="64" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="280" y="231"/>
+                            <mxPoint x="280" y="151"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="64" value="Audit Microservice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;fontColor=default;strokeColor=#6f0000;strokeWidth=2;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="345" y="208" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="Legend" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="32" y="560" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="34" y="615" width="131" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" style="edgeStyle=elbowEdgeStyle;html=1;strokeWidth=2;fillColor=#a20025;strokeColor=#6F0000;dashed=1;endArrow=none;endFill=0;fontSize=10;" parent="70" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="25" y="15" as="sourcePoint"/>
+                        <mxPoint y="15.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="69" value="Future Work" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;strokeWidth=2;fontSize=10;" parent="70" vertex="1">
+                    <mxGeometry x="31" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="30" y="590" width="131" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" style="edgeStyle=elbowEdgeStyle;html=1;strokeWidth=2;fillColor=#a20025;strokeColor=#0000CC;dashed=1;endArrow=none;endFill=0;fontSize=10;" parent="71" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="25" y="15" as="sourcePoint"/>
+                        <mxPoint y="15.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="73" value="Decommision" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;strokeWidth=2;fontSize=10;" parent="71" vertex="1">
+                    <mxGeometry x="31" width="100" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
