@@ -1,0 +1,103 @@
+#!/bin/bash
+
+function show_help {
+	__usage="
+Exports all drawio pages [diagrams] into specified formated output image files. The output files will have "sanitized" diagram names
+For this script to work, [draw.io](https://get.diagrams.net/) app needs to have been installed and added to the PATH variable.
+
+Usage: drawiopages2images [options...] diagram_filename
+
+Options:
+  -t, --type <output type>       Enter Output file name type possible options are png | svg | jpg | pdf 
+  -o, --outpath <output folder>  provide a output folder name where you want the generated files to be stored. 
+  -p, --print                    print the drawio command instead of executing it. This way you can only print a particular page instead of every page. 
+  -h, --help                     Show this help details.
+"; 
+echo "$__usage"
+}
+
+POSITIONAL_ARGS=()
+
+PRINT="FALSE"
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -t|--type)
+      DIAGRAM_FORMAT="$2"
+      shift # past argument
+      shift # past value
+      ;;
+    -o|--outpath)
+      DIAGRAM_TARGET_PATH="$2"
+      shift # past argument
+      shift # past value
+      ;;
+    -h|--help)
+      show_help;
+      exit 0;
+      ;;
+    -p|--print)
+      PRINT=TRUE
+      shift # past argument
+      ;;
+    --default)
+      DEFAULT=YES
+      shift # past argument
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
+
+echo "DIAGRAM_FORMAT  = ${DIAGRAM_FORMAT}"
+echo "DIAGRAM_TARGET_PATH = ${DIAGRAM_TARGET_PATH}"
+
+export diagram_file_name=$1
+export diagram_file_path=.
+export diagram_target_path=${DIAGRAM_TARGET_PATH}
+export diagram_format=${DIAGRAM_FORMAT}
+
+# Get diagram info. No need for --uncompressed : care only about <diagram name="..." ...> part.
+draw.io --export --format xml --output $diagram_file_path/$diagram_file_name.xml --page-index 0 $diagram_file_path/$diagram_file_name.drawio
+
+# grep -Eo "name=\"[^\"]*": get name="... tokens/matches from xml
+# cut -c7-: get diagram name (everything but starting 'name="'')
+# sed -e 's/[^a-zA-Z0-9_]/_/: replace all possible unsafe charactecter for file names with underscore (_) 
+# tr '[:upper:]' '[:lower:]': make all lower case
+# awk '{print NR,$1}': add sequence number (NR) to output to indicate index of diagram
+# xargs -n2 sh -c: get 2 arguments (index and sanitized driagram name) and pass to shell command
+# drawio --export...: export diagram at specified index (0-based) to PNG
+
+if [ $PRINT == "TRUE" ]
+then
+
+cat $diagram_file_path/$diagram_file_name.xml \
+    | grep -Eo "name=\"[^\"]*" \
+    | cut -c7- \
+    | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+    | tr '[:upper:]' '[:lower:]' \
+    | awk '{print NR,$1}' \
+    | xargs -n2 sh -c \
+    'echo draw.io --export --format $diagram_format --output $diagram_target_path/$1.$diagram_format --page-index $(expr $0 - 1) $diagram_file_path/$diagram_file_name.drawio'
+else
+
+cat $diagram_file_path/$diagram_file_name.xml \
+    | grep -Eo "name=\"[^\"]*" \
+    | cut -c7- \
+    | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+    | tr '[:upper:]' '[:lower:]' \
+    | awk '{print NR,$1}' \
+    | xargs -n2 sh -c \
+    'draw.io --export --format $diagram_format --output $diagram_target_path/$1.$diagram_format --page-index $(expr $0 - 1) $diagram_file_path/$diagram_file_name.drawio'
+
+fi
+
+rm $diagram_file_path/$diagram_file_name.xml
