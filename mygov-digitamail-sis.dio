@@ -1,0 +1,112 @@
+<mxfile host="65bd71144e">
+    <diagram name="04-readreceipt-seq" id="pEabx5JvrjrVklC5MNHl">
+        <mxGraphModel dx="2779" dy="1638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="EQnTpLThECwJIja0AJ52-0"/>
+                <mxCell id="EQnTpLThECwJIja0AJ52-1" style="" parent="EQnTpLThECwJIja0AJ52-0"/>
+                <mxCell id="EQnTpLThECwJIja0AJ52-2" value="Digtial Mailbox - Notify Read Receipt" style="rounded=1;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=20;labelBackgroundColor=none;fontColor=#000000;fontStyle=1;fillColor=#E6E6E6;strokeColor=#000000;" parent="EQnTpLThECwJIja0AJ52-1" vertex="1">
+                    <mxGeometry x="40" y="108" width="760" height="242" as="geometry"/>
+                </mxCell>
+                <mxCell id="EQnTpLThECwJIja0AJ52-3" value="%%{init: {'theme': 'forest', 'themeVariables': { 'primaryColor': '#ffcccc', 'edgeLabelBackground':'#ffffee', 'tertiaryColor': '#fff0f0'}}}%%&#10;sequenceDiagram&#10;autonumber&#10;        participant MGV_CUST as myGov Customer&#10;        participant MGV_IB_WEB as Inbox Portal&#10;        participant MGV_IB_APP as myGov Inbox Application&#10;        participant MGV_IB_API as myGov Inbox API&#10;        participant MGV_RP_ATT_STR as Relying Party Attachment Store&#10;&#10;        MGV_CUST -&gt;&gt; MGV_IB_WEB : readMessage(messageId): message&#10;        MGV_IB_WEB -&gt;&gt; MGV_IB_APP : readMessage(messageId): message&#10;        MGV_IB_APP -&gt;&gt; MGV_IB_API : notifyReadReceipt(myGovId,&lt;br&gt;messageId) : status&#10;        MGV_IB_API -&gt;&gt; MGV_RP_ATT_STR : notifyReadReceipt(mbun,&lt;br&gt;messageId) : status&#10;" style="shadow=0;dashed=0;align=left;strokeWidth=1;shape=mxgraph.mermaid.abstract.mermaid;labelBackgroundColor=#ffffff;noLabel=1;theme=default;rounded=1;fontSize=14;fontColor=#000000;fillColor=#E6E6E6;" parent="EQnTpLThECwJIja0AJ52-1" vertex="1">
+                    <mxGeometry x="47" y="120" width="746" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="EQnTpLThECwJIja0AJ52-4" value="Components" parent="EQnTpLThECwJIja0AJ52-0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="03-retrieveattachment-seq" id="oQIoJYLeneWpCUZ-u2by">
+        <mxGraphModel dx="2779" dy="1638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="Sr4nyESnENaQ82weLLqm-0"/>
+                <mxCell id="Sr4nyESnENaQ82weLLqm-1" style="" parent="Sr4nyESnENaQ82weLLqm-0"/>
+                <mxCell id="Sr4nyESnENaQ82weLLqm-2" value="Digtial Mailbox - Retrieve Attachment" style="rounded=1;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=20;labelBackgroundColor=none;fontColor=#000000;fontStyle=1;fillColor=#E6E6E6;strokeColor=#000000;" parent="Sr4nyESnENaQ82weLLqm-1" vertex="1">
+                    <mxGeometry x="71" y="108" width="690" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="Sr4nyESnENaQ82weLLqm-3" value="%%{init: {'theme': 'forest', 'themeVariables': { 'primaryColor': '#ffcccc', 'edgeLabelBackground':'#ffffee', 'tertiaryColor': '#fff0f0'}}}%%&#10;sequenceDiagram&#10;autonumber&#10;        participant MGV_CUST as myGov Customer&#10;        participant MGV_IB_WEB as Inbox Portal&#10;        participant MGV_IB_APP as myGov Inbox Application&#10;        participant MGV_RP_ATT_STR as Relying Party Attachment Store&#10;&#10;        MGV_CUST -&gt;&gt; MGV_IB_WEB : readMessage(messageId): message&#10;        MGV_IB_WEB -&gt;&gt; MGV_IB_APP : readMessage(messageId): message&#10;        MGV_CUST -&gt;&gt; MGV_IB_WEB : readAttachment(messageId, attachmentId):&lt;br&gt; attachment&#10;        MGV_IB_WEB -&gt;&gt; MGV_IB_APP : readAttachment(messageId, attachmentId):&lt;br&gt; attachment&#10;        MGV_IB_APP -&gt;&gt; MGV_RP_ATT_STR : retrieveAttachment(mbun, messageId, &lt;br&gt;attachmentId): attachment&#10;" style="shadow=0;dashed=0;align=left;strokeWidth=1;shape=mxgraph.mermaid.abstract.mermaid;labelBackgroundColor=#ffffff;noLabel=1;theme=default;rounded=1;fontSize=14;fontColor=#000000;fillColor=#E6E6E6;" parent="Sr4nyESnENaQ82weLLqm-1" vertex="1">
+                    <mxGeometry x="44" y="118" width="720" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="Sr4nyESnENaQ82weLLqm-4" value="Components" parent="Sr4nyESnENaQ82weLLqm-0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="02-publishmessage-seq" id="2mNiYjSB96_8ls-yiAys">
+        <mxGraphModel dx="1688" dy="745" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="WWikm3p9Dk6OQMaylpYj-0"/>
+                <mxCell id="WWikm3p9Dk6OQMaylpYj-1" style="" parent="WWikm3p9Dk6OQMaylpYj-0"/>
+                <mxCell id="WWikm3p9Dk6OQMaylpYj-2" value="Digtial Mailbox - Publish Message" style="rounded=1;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=20;labelBackgroundColor=none;fontColor=#000000;fontStyle=1;fillColor=#E6E6E6;strokeColor=#000000;" parent="WWikm3p9Dk6OQMaylpYj-1" vertex="1">
+                    <mxGeometry x="40" y="120" width="720" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="WWikm3p9Dk6OQMaylpYj-3" value="%%{init: {'theme': 'forest', 'themeVariables': { 'primaryColor': '#ffcccc', 'edgeLabelBackground':'#ffffee', 'tertiaryColor': '#fff0f0'}}}%%&#10;sequenceDiagram&#10;autonumber&#10;        participant MGV_RP as Relying Parties&#10;        participant MGV_IB_API as myGov Inbox API&#10;        participant MGV_IB_APP as myGov Inbox APP&#10;        MGV_RP -&gt;&gt; MGV_IB_API : publishMessage(mbun, msg): status&#10;        MGV_IB_API -&gt;&gt; MGV_IB_APP : publishMessage(mygovId, msg): status" style="shadow=0;dashed=0;align=left;strokeWidth=1;shape=mxgraph.mermaid.abstract.mermaid;labelBackgroundColor=#ffffff;noLabel=1;theme=default;rounded=1;fontSize=14;fontColor=#000000;fillColor=#E6E6E6;" parent="WWikm3p9Dk6OQMaylpYj-1" vertex="1">
+                    <mxGeometry x="40" y="121" width="720" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="WWikm3p9Dk6OQMaylpYj-4" value="Components" parent="WWikm3p9Dk6OQMaylpYj-0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="n6JUznCpkLYIIa2AfjBv" name="01-digitalmail-usecases">
+        <mxGraphModel dx="1688" dy="745" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" style="locked=1;" parent="0"/>
+                <mxCell id="2" value="Notify Customer Details Change" style="rounded=1;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=20;labelBackgroundColor=none;fontColor=#000000;fontStyle=1;fillColor=#E6E6E6;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="50" width="570" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Components" style="locked=1;" parent="0"/>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-13" value="Relying Parties" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#000000;strokeColor=#000000;strokeWidth=2;fillColor=none;" parent="3" vertex="1">
+                    <mxGeometry x="60" y="150" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-15" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fontColor=#000000;strokeColor=#000000;strokeWidth=2;fillColor=none;" parent="3" vertex="1">
+                    <mxGeometry x="225" y="70" width="220" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-16" value="publishMessage" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;strokeColor=#000000;strokeWidth=2;fillColor=none;" parent="3" vertex="1">
+                    <mxGeometry x="266" y="85" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-17" value="retrieveAttachment" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;strokeColor=#000000;strokeWidth=2;fillColor=none;" parent="3" vertex="1">
+                    <mxGeometry x="266" y="152" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-18" value="notifyReadReceipt" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;strokeColor=#000000;strokeWidth=2;fillColor=none;" parent="3" vertex="1">
+                    <mxGeometry x="265" y="217" width="120" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-14" value="Digtial Mailbox" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#000000;strokeColor=#000000;strokeWidth=2;fillColor=none;" parent="3" vertex="1">
+                    <mxGeometry x="490" y="150" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-20" style="html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" parent="3" source="4MnuF7OWBN95qTk2liSO-13" target="4MnuF7OWBN95qTk2liSO-16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-23" value="calls" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#000000;labelBackgroundColor=#E6E6E6;" parent="4MnuF7OWBN95qTk2liSO-20" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4739" y="4" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-21" style="edgeStyle=none;html=1;fontColor=#000000;strokeColor=#000000;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="3" source="4MnuF7OWBN95qTk2liSO-17" target="4MnuF7OWBN95qTk2liSO-13" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="70" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-24" value="uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#000000;labelBackgroundColor=none;" parent="4MnuF7OWBN95qTk2liSO-21" vertex="1" connectable="0">
+                    <mxGeometry x="0.6027" y="-2" relative="1" as="geometry">
+                        <mxPoint x="13" y="-7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-22" value="provides" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;strokeColor=#000000;strokeWidth=2;labelBackgroundColor=#E6E6E6;" parent="3" source="4MnuF7OWBN95qTk2liSO-13" target="4MnuF7OWBN95qTk2liSO-18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-26" style="edgeStyle=none;html=1;labelBackgroundColor=#E6E6E6;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" parent="3" source="4MnuF7OWBN95qTk2liSO-16" target="4MnuF7OWBN95qTk2liSO-14" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-29" value="provides" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#000000;labelBackgroundColor=#E6E6E6;" parent="4MnuF7OWBN95qTk2liSO-26" vertex="1" connectable="0">
+                    <mxGeometry x="0.5931" y="2" relative="1" as="geometry">
+                        <mxPoint x="-33" y="-12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-27" value="calls" style="edgeStyle=none;html=1;labelBackgroundColor=#E6E6E6;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" parent="3" source="4MnuF7OWBN95qTk2liSO-14" target="4MnuF7OWBN95qTk2liSO-17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4MnuF7OWBN95qTk2liSO-28" value="calls" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#E6E6E6;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" parent="3" source="4MnuF7OWBN95qTk2liSO-14" target="4MnuF7OWBN95qTk2liSO-18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
