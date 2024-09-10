@@ -52,7 +52,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="7yx8tWe215JCycKYjYsT" name="Page-5">
-        <mxGraphModel dx="1077" dy="1623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="2246" dy="2450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -83,6 +83,9 @@
                 </mxCell>
                 <mxCell id="tn6TvaNlkEc0OAdItSvS-3" value="SAMPLE" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Open Sans;" vertex="1" parent="1">
                     <mxGeometry x="110" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="tn6TvaNlkEc0OAdItSvS-9" value="sequenceDiagram&#10;    participant Alice&#10;    participant Bob&#10;    Alice-&gt;&gt;John: Hello John, how are you?&#10;    loop Healthcheck&#10;        John-&gt;&gt;John: Fight against hypochondria&#10;    end&#10;    Note right of John: Rational thoughts &lt;br/&gt;prevail!&#10;    John--&gt;&gt;Alice: Great!&#10;    John-&gt;&gt;Bob: How about you?&#10;    Bob--&gt;&gt;John: Jolly good!" style="shadow=0;dashed=0;align=left;strokeWidth=1;shape=mxgraph.mermaid.abstract.mermaid;labelBackgroundColor=#ffffff;noLabel=1;theme=default;fontFamily=Open Sans;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="-570" y="-640" width="400" height="300" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
