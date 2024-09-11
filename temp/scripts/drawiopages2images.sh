@@ -82,7 +82,7 @@ function convert_diagram() {
 convert_pdf_svg() {
   for file in *.pdf
   do
-    inkscape "$file" --pdf-poppler --export-text-to-path --export-plain-svg --export-filename "${file%.pdf}.svg"
+    inkscape "$file" --pdf-poppler --export-text-to-path --export-plain-svg --pages=1 --export-filename "${file%.pdf}.svg"
   done
 }
 
