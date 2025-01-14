@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 const crypto = require('crypto');
 
 const app = express();
@@ -8,20 +9,20 @@ const port = 3000;
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
-// Encryption configuration
-const algorithm = 'aes-256-cbc';
-const key = crypto.randomBytes(32); // Replace this with your securely stored key
-const iv = crypto.randomBytes(16); // Replace this with your securely stored IV
+// Load RSA keys
+const publicKey = fs.readFileSync('./public_key.pem', 'utf8');
 
-// Encrypt function
+// Encrypt function using RSA-OAEP-256
 function encryptToken(token) {
-    const cipher = crypto.createCipheriv(algorithm, key, iv);
-    let encrypted = cipher.update(token, 'utf8', 'hex');
-    encrypted += cipher.final('hex');
-    return {
-        encryptedToken: encrypted,
-        iv: iv.toString('hex'), // Include the IV for decryption
-    };
+    const encrypted = crypto.publicEncrypt(
+        {
+            key: publicKey,
+            padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
+            oaepHash: 'sha256',
+        },
+        Buffer.from(token, 'utf8')
+    );
+    return encrypted.toString('base64'); // Return Base64-encoded encrypted token
 }
 
 // API endpoint to encrypt JWT
@@ -33,9 +34,10 @@ app.post('/encrypt-token', (req, res) => {
     }
 
     try {
-        const result = encryptToken(token);
-        res.status(200).json(result);
+        const encryptedToken = encryptToken(token);
+        res.status(200).json({ encryptedToken });
     } catch (error) {
+        console.error('Encryption error:', error);
         res.status(500).json({ error: 'Failed to encrypt token' });
     }
 });
