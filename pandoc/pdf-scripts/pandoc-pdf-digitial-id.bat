@@ -1,0 +1,17 @@
+pandoc -N \
+--pdf-engine=xelatex \
+--highlight-style breezedark \
+--from=gfm \
+--template eisvogel \
+-V toc-own-page=true \
+-V table-use-row-colors=true \
+-V theme=moon \
+-V lang="en-GB" \
+-V titlepage-rule-color="360049" \
+-V header-left="\\hspace{1cm}" \
+-V header-right="\\thetitle" \
+-V footer-left="\\hspace{1cm}" \
+-V footer-center="For Official Use Only" \
+-V footer-right="Page \\thepage" \
+-V titlepage-background="../../../../pandoc/backgrounds/digital-identity-bg.pdf" \
+-o di-rp-ato-ram.pdf di-rp-ato-ram.md
